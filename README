@@ -1,0 +1,150 @@
+This is the README file for LSAT (Linux Security Auditing Tool)
+
+NOTE: This is still BETA software. Pretty sure it will not break anything,
+and as of this writing it will not change any files on the system. 
+--------------------------------------------------------------------------------
+Hoempage:
+
+The homepage for lsat is http://usat.sourceforge.net
+The backup homepage is http://www.dimlight.org/lsat
+The homepage for lsat used to be http://www.dimlight.org/~number9/lsat
+
+--------------------------------------------------------------------------------
+About: 
+
+Linux Security Auditing Tool (LSAT) is a post install security 
+auditing tool. It is modular in design, so new features can be added 
+quickly. It checks inetd entries and scans for unneeded RPM packages. 
+It is being expanded to work with Linux distributions other than Red Hat, 
+and checks for kernel versions. 
+--------------------------------------------------------------------------------
+Changes:
+
+See changelog/changelog.html for changes.
+--------------------------------------------------------------------------------
+Current working systems:
+
+LSAT currently compiles and works under RedHat 5.x, 6.x, 7.x, 8.x, 9.x and 
+Gentoo linux systems. (tested on RedHat 8,9 and Gentoo 1.4)
+It should compile and run under RedHat derivative systems, Debian, and the 
+x86_64 based systems. 
+
+The goal is to have it work under many *NIX systems, including but not
+limited to Solaris, Debian, RedHat (and derivatives), FreeBSD etc.
+--------------------------------------------------------------------------------
+REQUIREMENTS:
+
+LSAT was intended to build with a minimal of fuss, but it does require
+one thing that is not installed on some systems (I have heard this
+from Suse users in particular). popt. If make fails or complains about
+popt, please install the popt-devel package as you need the popt header
+files.
+
+Other things that would be nice, but LSAT will run without:
+To be clear, the following are OPTIONAL, but are useful anyhows,
+and LSAT will use them if you have them to give you more information.
+
+nmap    Yes LSAT calls nmap to do that one extra scan of your ip address.
+lsof    This is not installed by default on many systems.  Your distribution
+        most probably has a package of this ready to be installed.
+ip      This is on newer redhat boxen, replaces ipconfig, gives more output.
+sha512sum This is on most new systems by default, even Mac OS X.
+--------------------------------------------------------------------------------
+Compilation: 
+
+LSAT now has autoconf: building should just be (in the lsat-<version> dir:
+
+./configure
+make
+
+If you like you can do a:
+
+make install
+
+after the make. This will place lsat in /usr/local/bin and man pages
+in /usr/local/man.
+
+If you want to clean the config files, etc, do a:
+
+make clean
+
+If you want it to be as if you just unpacked the tarball do:
+
+make cleanall
+
+--------------------------------------------------------------------------------
+Running:
+
+To run the program:
+
+./lsat [OPTIONS]
+
+Options: 
+
+        -d                      diff current and old md5, output in lsatmd5.diff
+        -f <distribution>       Force a specific distribution test.
+        Distro names are:
+                                redhat
+                                debian
+                                mandrake
+                                solaris
+                                gentoo
+                                macosx
+                                If no -f option, lsat will guess. If lsat can
+                                not guess the distribution, default is redhat.
+        -a                      Show this (advanced) help page
+        -o <filename>           Output file name -- default is lsat.out
+        -r                      Check rpm integrity -- redhat or mandrake only
+        -s                      Silent mode
+        -v                      Verbose output
+        -w                      Output file in html format
+        -x <filename>           eXclude module(s) in filelist from checks...
+                                modules listed in filename will be excluded
+                                from checks. Valid module names are the module
+                                names themselves without the check.
+                                (e.g. set not checkset)
+
+
+NOTE: The valid names for the -x (exclude) option are the following:
+pkgs, rpm, inetd, inittab, logging, set, write, dotfiles, passwd, files,
+umask, ftpusers, rc, kbd, limits, ssh, open, issue, www, md5, modules, 
+securetty, perms, net, forward, promisc, listening, cfg, bpass, ipv4, startx,
+ftp, disk, services, hostfiles, pkgupdate and passtime.
+These should be in a text file in the working directory where lsat
+is called from, and can be comma, whitespace/tab or newline delimited.
+
+
+Any number of options can be specified on the command line.
+
+This may take some time on older systems as it (at some point in time) does
+an rpm -qa while checking installed packages. It also checks all SETUID and
+SETGID files on the system. (On my Sun sparc20 running Mandrake at 80mhz, it
+can take quite a while)
+
+The output is in the file in the directory where lsatmain was run and 
+should be called lsat.out. If you have previously run lsatmain then the
+previous output will be moved to lsat.old. This is so that you may check
+your imcremental security improvements to the system.
+
+--------------------------------------------------------------------------------
+Modules:
+
+Please see modules.html for info on modules or 
+writing modules.
+Plain text version is README.modules
+--------------------------------------------------------------------------------
+License:
+
+This software is licensed under the GNU/GPL, please see http://www.gnu.org
+for more detals.
+--------------------------------------------------------------------------------
+Contact:
+
+I am number9. Sometimes known as Triode. My personal page is at
+
+http://www.dimlight.org/number9 
+
+You may reach me at
+
+triode@users.sourceforge.net or number9@dimlight.org if its up :)
+--------------------------------------------------------------------------------
