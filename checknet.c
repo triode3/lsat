@@ -31,6 +31,7 @@ int html;
     char tempstring[192];  /* tempstring for entries	*/
     int field;  			 /* some vars...	*/
     int i;					 /* counter	*/
+    int ipfield;        /* where is the location of the port in the output of netstat/ss? */
     FILE *infile;  		 /* tempfile file pointer   	*/
     FILE *fileptr;
     const char * tmp_file = "/tmp/lsat2.lsat";
@@ -55,7 +56,20 @@ int html;
     {
     
         tempfile = "/tmp/lsat1.lsat";
-        shellcode = "netstat -an |grep LISTEN |grep 0.0.0.0 2>/dev/null >>/tmp/lsat1.lsat";
+        if ((system("test -r /bin/netstat")) == 0)
+        {
+            /* Since netstat seems to be on the system, lets use that. */
+            ipfield = 5;
+            shellcode = "netstat -an |grep LISTEN |grep 0.0.0.0 2>/dev/null >>/tmp/lsat1.lsat";
+        }
+        else /* We are assuming that netstat is gone and we are on iproute2 */
+        {
+            /* this may be a bad assumption, but if you do not have netstat */
+            /* and you do not have ss, I don't know what to do with you :)  */
+            /* in that case if will dostuff will fail with the perror       */
+            ipfield = 4;
+            shellcode = "ss -anp |grep -v \"* 0\" |grep -v WAIT 2>/dev/null >>/tmp/lsat1.lsat";
+        }
         if ((dostuff(tempfile, 0, shellcode, 0, html)) < 0)
         {
  	    /* something went wrong */
@@ -82,9 +96,11 @@ int html;
         return(-1);
     }
 
-    /* ok, the file should look something like: 			*/
+    
+    /* ok, for netstat the file should look something like: 	*/
     /* protocol	n	n	<ip>:<port>      <ip>:<port> LISTEN 	*/
-    /* so we want the port on the 1st <ip>:<port> pair.		*/
+    /* for ss the port is in field _4_ not _5_, called ipfield below    */
+    /* so we want the port on the 1st <ip>:<port> pair.		    */
     /* we then want to look that port up in /etc/services    */
     /* and print out that line to the outfile...			*/
 
@@ -113,7 +129,9 @@ int html;
 		fprintf(fileptr, "%s\t\t", tempstring);
             }
             /* get the 5th field... */
-            if (field == 4)
+            /* which is actually 5-1=4, but we are using */
+            /* the variable ipfield...                      */
+            if (field == (ipfield-1))
             {
 		fprintf(fileptr, "%s\n", tempstring);
             }
