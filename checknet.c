@@ -188,9 +188,9 @@ int html;
 	/* one interface on the box and then nmap */
 	/* each interface, except for loopback    */
 
-        /* also note, some distrios outputs are different */
+    /* also note, some distrios outputs are different */
         if (distribution == 5)
-	{
+	    {
 	    	/* we are on Mac OSX */
 	    	shellcode = "nmap -v -T insane `ifconfig | grep inet | grep -v inet6 | awk -F\" \" 'length($2) > 0 {print $2}' |grep -v 127.0.0.1 |xargs` 2>/dev/null  >>/tmp/lsat1.lsat";
         }
@@ -226,7 +226,7 @@ int html;
             perror(" Creation of list failed.");
 	    	return(-1);
         }
-
+    }
 	/* run arp to see if we have some arp poisen going on */
 	if ((system("which arp 1>/dev/null 2>/dev/null > /dev/null")) == 0)
 	{
@@ -240,32 +240,49 @@ int html;
 	    }
 	}
 	/* check for kernel interface statistics */
+    /* lets again check for netstat or ip   */
 	if ((system("which netstat 1>/dev/null 2>/dev/null > /dev/null")) == 0)
 	{
 	    shellcode = "netstat -i 2>/dev/null >/tmp/lsat1.lsat";
 	    header = "Output from netstat -i showing Kernel interface statistics\n";
-	    if ((dostuff(tempfile, filename, shellcode, header, html)) <0)
-	    {
-	        /* something went wrong */
-	        perror(" Creation of list failed.");
-		return(-1);
-	    }
+    }
+    else
+    {
+        if ((system("which ip 1>/dev/null 2>/dev/null > /dev/null")) == 0)
+        {
+            shellcode = "ip -s link >/dev/null >/tmp/lsat1.lsat";
+            header = "Output from ip showing Kernel interface statistics\n";
+        }
+    }
+    if ((dostuff(tempfile, filename, shellcode, header, html)) <0)
+    {
+        /* something went wrong */
+	    perror(" Creation of list failed.");
+	    return(-1);
 	}
+	
 
 	/*check for routing*/
 	if ((system("which netstat 1>/dev/null 2>/dev/null > /dev/null")) == 0)
 	{
 	    shellcode = "netstat -rn 2>/dev/null >/tmp/lsat1.lsat";
 	    header = "Output from netstat -rn showing current routing\n";
-	    if ((dostuff(tempfile, filename, shellcode, header, html)) <0)
-	    {
-	        /* something went wrong */
-		perror(" Creation of list failed.");
-		return(-1);
-	    }
-	}
-
     }
+    else
+    if ((system("which ss 1>/dev/null 2>/dev/null > /dev/null")) == 0)
+    {
+        shellcode = "ip route 2>/dev/null >/tmp/lsat1.lsat";
+        header = "Output from ip route showing current routing\n";
+    }
+	if ((dostuff(tempfile, filename, shellcode, header, html)) <0)
+	{
+	    /* something went wrong */
+	    perror(" Creation of list failed.");
+		return(-1);
+	}
+	
+
+    
     if (verbose > 0)
     {
         printf(" Finished module checknet.\n");
