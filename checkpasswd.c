@@ -236,6 +236,16 @@ int html;
 	}
     }
 
+     /* test for duplicate UIDs */
+    header = "The following UID numbers are duplicates\nPlease remove duplicate UID accounts.";
+    shellcode = "cat /etc/passwd |awk -F: '{print $3}' |uniq -d 1>/dev/null 2>/dev/null >/tmp/lsat1.lsat";
+    if ((dostuff(tempfile, filename, shellcode, header, html)) < 0)
+    {
+        /* something went wrong */
+        perror(" Write to outfile failed.");
+        return(-1);
+    }
+
     if (verbose > 0)
     {
         printf(" Finished in checkpasswd module.\n");
