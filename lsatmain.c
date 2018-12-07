@@ -312,9 +312,9 @@ int main(int argc, char *argv[])
     */ 
     char release[50]; /* array for release level		*/
     char kernel[50];  /* what kernel user is running	*/
-    static char *man_distro; /* if the user specifies a distribution */
+    static char man_distro[10]; /* if the user specifies a distribution */
     const char * header   =NULL;   /* to print out the header */
-    static char *out_file = "lsat.out";  /* output filename var  */
+    static char out_file[255] = "lsat.out";  /* output filename var  */
     char xlist[100]; /* modules to exclude */
     int xarray[37] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0}; 
     int  somethinginxlist = 0;
@@ -354,10 +354,10 @@ int main(int argc, char *argv[])
 			  diff = 1; 
 			  break;
 		case 'm': 
-			  strcpy(man_distro, argv[i]+3);
+			  strncpy(man_distro, argv[i]+3,sizeof(man_distro));
 			  break;
 		case 'o': 
-			  strcpy(out_file, argv[i]+3);
+			  strncpy(out_file, argv[i]+3,sizeof(out_file));
 			  break;
 		case 'r': 
 			  rpmmodule = 1; 
@@ -370,7 +370,7 @@ int main(int argc, char *argv[])
 			  break;
 		case 'w': 
 			  html = 1; 
-			  out_file="lsat.html"; 
+			  strcpy(out_file, "lsat.html"); 
 			  break;
 		case 'x': strcpy(xlist,argv[i]+3);
 			  somethinginxlist = 1;
