@@ -1,1 +1,0 @@
-write pkgs files md5 set pkgupdate
