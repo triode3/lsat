@@ -1,0 +1,49 @@
+
+LSAT should check for what distro it is running on and some
+modules will behave differently based on this (checkpkgs for
+instance), however, there is a package (checkrpm) which is
+redhat specific and is also enabled via a switch to LSAT
+(lsat -r). Some notes are given below...
+
+1) lsat -r will run the module checkrpm, which performs
+a basic signature check on packages. 
+
+NOTE: this is not the best way to check integrity of
+packages, since if rpm itself was hacked the output can
+be falsified. HOWEVER, if rpm is known good (say, by checking
+the md5sum) it can prove useful.
+
+2) If lsat -r is run it will take some considerable time
+to perform this extra check. (on my 30Mhz system it increased
+LSAT run time by 5min)
+
+3) Please note (IMPORTANT): don't freak if lsat -r reports
+all kinds of modifications to packages if your system is not
+a fresh install. You probably modified some stuff already,
+have you not? For instance, commenting out all lines in 
+/etc/inetd.conf (and restarting it) is a "good thing" but 
+doing so will make checkrpm report that this has been modified. 
+It is a good idea to run this module, but please go through the 
+output and think about what _you_ have changed to the system 
+before concluding that you have been 0wn3d. 
+
+This will also be printed in the output, but it is here for
+completeness also... this is what the output symbols mean from
+checkrpm:
+
+M   Mode differs (includes permissions and file type)
+5   MD5 sum differs
+D   Device major/minor number mis-match
+L   readLink(2) path mis-match
+U   User ownership differs
+G   Group ownership differs
+T   mTime differs
+
+Please go through the output and check each one. Again, unless you
+_just_ did a fresh install, some files will be modified from 
+package installations and modifications to the system that you
+performed in the past. Think about what you or a package
+has modified before concluding the machine has been hax0r3d.
+
+
+

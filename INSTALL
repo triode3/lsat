@@ -1,0 +1,80 @@
+------------------------------------------------------
+-INSTALL file for LSAT (Linux Security Auditing Tool)-
+------------------------------------------------------
+
+We assume that you have not even unpacked LSAT yet...
+kindof strange as this is the first set of instructions, 
+but nevertheless, here we go...
+
+Dowload lsat-<version>.tgz or .zip, depending on your
+preference and place it in any good looking directory.
+I prefer to put it in my home dir. You can use the built
+in "install" feature to install it where you want later.
+
+For the .tgz file:
+
+tar -xvzf lsat-<version>.tgz
+
+For the .zip file:
+
+unzip lsat-<version>.tgz
+
+cd  lsat-<version>
+./configure
+make
+
+If configure complains, please send me an email. If you
+don't have configure, you probably need it. You could do 
+a manual build by reading through the make file. Being as
+you are paranoid (you are using this right?) you have 
+probably already checked the Makefile.in just to make
+sure I was not doing anything clever. :O
+
+To install lsat in /usr/local/bin do a 
+make install
+
+To build the manpage do a 
+make manpage
+
+To install the manpage do a 
+make installman
+
+If you are modifying or building your own modules,
+you will find that 
+make clean
+can come in really handy, so I included it for you. :)
+
+Developers may find a make cleanall really helpful.
+Read the Makefile for more details.
+
+To run lsat do a 
+./lsat
+
+For help and (up to date) command line options do a
+./lsat -h
+
+Any number of options can be specified on the command line.
+
+This may take some time on older systems as it (at some point in time) does
+an rpm -qa while checking installed packages (pkginfo on Solaris). 
+It also checks all SETUID and SETGID files on the system.
+On a system more "modern" than mine (80Mhz) it should not take long.
+
+The output is in the file in the directory where lsatmain was run and
+should be called lsat.out. If you have previously run lsatmain then the
+previous output will be moved to lsat.old. This is so that you may check
+your imcremental security improvements to the system.
+
+Ok, the documentation for LSAT is as follows: in order
+of how often they are modified:
+modules.html and README.modules - gives a nice descript of what each module
+does and also a primier on how to build modules.
+changelog - whats new, whats old.
+README - basic stuffs, sometimes added to.
+INSTALL - a new file, but I do not see it changing much. :)
+
+You can reach me (sometimes) at <number9 at dimlight dot org>
+and othertimes at <triode at users dot sourceforge dot net>
+ 
+
+
