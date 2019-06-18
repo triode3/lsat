@@ -1,0 +1,62 @@
+
+This is the readme file for the -x option. The -x option in lsat
+is there to exclude modules from being run while running lsat.
+
+The command line is:
+
+lsat -x somefilename.txt
+
+somefilename.txt should be a comma, tab, whitespace or newline delimited
+file which contains the name of the module(s) that you do NOT wish to run.
+
+See the sample_exclude.txt file for an example. 
+
+A brief summary of the modules are below, as well as the correct
+name that should be used in the aforementioned exclusion list:
+
+pkgs	- checks which pkgs are installed (rpm and pkg systems only)
+rpm	- performs rpm integrity check (rpm systems only)
+inetd	- checks for problems in inetd file
+inittab - checks for sane values in inittab
+logging - checks for correct logging (are we doing enough?)
+set  	- checks SUID/GUID of files
+write	- checks for world read/writeable files
+dotfiles- finds and reports all dotfiles (.rhosts for instance)
+passwd	- checks for baddies in passwd file
+files 	- performs file checks for insecurities on system
+umask	- checks for a sensible umask on the system
+ftpusers- checks for valid /etc/ftpusers and who is in that file
+rc	- checks rc scripts
+kbd	- checks for proper perms etc on keyboard
+limits  - chceks for good limits on files, etc systemwide
+ssh     - checks version and security problems in ssh config
+open	- checks open files
+issue	- checks systemwide issue
+www	- checks web server for common errors/SSIs
+md5	- perform md5sum on all files (note this is off by default)
+modules - check to see if loadable module support is enabled in kernel
+securetty - check for sensible values in tty settings
+perms   - see if all perms on files/dirs are ok
+net	- check local network connections
+forward - check to see if network forwarding is enabled
+promisc - check to see if any network interface is in promisc mode
+listening - check to see which applications and services are listening on the system
+cfg	- check all services in all runlevls and print them
+bpass - check for boot loader password configuration
+ipv4 - check for various ipv4 insecure settings
+startx - check for insecure X startup parameters
+ftp - checks for common ftp server misconfigurations
+disk - checks disk space and mount points
+services - give a list of services started at boot on the system
+hostfiles - check hosts.allow and hosts.deny files
+pkgupdate - check for available software updates (not on Solaris/Mac OSX/Slackware)
+passtime -checks for password expiration information on user accounts
+
+
+For more info on lsat options do 
+
+lsat -a
+
+for advanced help.
+
+

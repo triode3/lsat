@@ -1,0 +1,399 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+<HEAD>
+<TITLE>LSAT changelog</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</HEAD>
+<body bgcolor="#000000" text="#FFFFFF">
+<center>
+Changelog for LSAT
+</center>
+<br><br>
+<pre>
+-0.9.8.6- 06/13/2019
+    - fixed code in lsatmain to not throw warning about /etc/*-release being a directory
+    - fixed implicit decleration warning in checkservices module
+    - module checknet modified for netstat to give tcp6 output
+    - module checklogging modified, now uses last including reboots for more information
+    - module checknet modified to fix arp test and output
+    - module checkssh added new checks (allowusers/allowgroups/maxauthtries)
+-0.9.8.5- 12/07/2018
+    - fixed -m from crashing on gentoo 
+-0.9.8.4- 05/25/2018
+    - Added ss to checknet for iproute2
+    - Added check for chage to checkpasstime
+-0.9.8.3- 11/18/2015
+	- added check to checkpasswd to check for duplicate UIDs
+-0.9.8.2- 06/19/2014
+	- Fixed warning about file closing in lsatmain
+	- checkmd5 now checks for sha512sum and uses it if available (linux + mac)
+	- added checkpkgupdate module which checks for availalbe software updates
+    - added checkpasstime module to check for password expiration information 
+	- checkdisk output format fixed
+	- checklogging output format fixed
+	- checkftpusers modified and output format fixed
+	- checkrc was not calling main file correctly, also fixed output format
+	- updated README.modules
+	- README.excludes was missing a number of modules
+	- Main README file updated
+	- Updated lsat man pages
+-0.9.8.1- 05/21/2014
+	- Fixed checklogging module which was returning error on faillog
+	- Added lastlog checks to checklogging module
+	- Gentoo has moved ipconfig and checknet/checknetpromisc was failing, now checks for location
+	- The ipv4 accept redirect check was incorrect in the checkipv4 module
+	- The checkipv4 module now explicitly notes how to enable suggested settings
+	- The module list in modules.html was inconsistent with the lsat package, fixed
+	- checkhosts module was failing on hosts.deny, fixed	
+	- checkhosts module was not being run on some systems, fixed
+	- checkservices module was sending improper code for checking on debian, fixed
+	- checkservices module had a typo preventing RedHat/CentOS/etc from working properly, fixed
+	- checkservices now dynamically checks for current runlevel on RedHat/CentOS/Debian
+-0.9.8- 04/26/2014
+	- changed checkbpass to check for grub2
+	- added ubuntu/LinuxMint and OS X to checkservices
+	- changed gentoo in checkservices to use rc-update
+	- added ubuntu/LinuxMint to checkrcperms and fixed typos
+	- clarified some text in checkpasswd module
+	- added an extra check for gentoo OS detection
+    - some missing distributions put in the help output and man page
+    - man page cleanups and additions
+	- cleaned up some straggling MAC dot files from way back. Wow.
+	- Added check for ubuntu and LinuxMint distributions
+	- Made the headers of each section in the html output colored (linux xterm green) 
+-0.9.7.1- 05/07/2008
+	- on RH/Fedora checklimits going to stdout, not a file, fixed
+-0.9.7  - 05/04/2008
+	- Added another limits check for resource limits. 
+	- Added another check in checkcfg (redhat specific).
+	- Added check for strict mode (should be on) in checkssh.
+ 	- Fixed an output error in checkcfg.
+-0.9.6  - 05/20/2007
+        - removed dependancy on popt library
+	- added extra passwd and group checks under linux
+	- added check for failed logins under linux/solaris
+	- modified the kernel module check under linux
+	- added check for kernel modules under Solaris
+	- added network interface stats and routing checks
+	- problem in checknetforward giving false positives, fixed
+	- verbose output was not very consistent, fixed.
+-0.9.5  - 04/26/2007
+	- added check for listing current arp table.
+	- proper headers missing from a number of modules, fixed.
+	- checkrc was not working under linux kernel 2.6 and gentoo, fixed.
+	- fixed possible symlink attack in various check modules
+	- changed readme and modules howto to reflect sylink fix noted above
+	- fixed checkinit module returning false positive under gentoo
+	- changed checknet to reflect network promisc change under 2.6 kernel
+	- various typos and formatting fixed
+-0.9.4  - 09/14/2006
+        - lsat: added explicit CentOS, CaOS and Fedora Core check (unspawn)
+        - umask: don't pick up /etc/fstab and /etc/bash_completion (unspawn)
+        - md5: find should also exclude kernel-2.6 /sys (unspawn)
+        - openfiles: "-n" (no resolving) should make it slightly faster (unspawn)
+        - listening: checks for applications listening (unspawn)
+-0.9.3  - 10/06/2005
+        - Fixed error in checkwww under slackware (znc)
+	- Fixed error in checkhostfiles under Solaris (znc)
+ 	- Fixed typos in checkinittab.c (Triode)
+	- General code cleanup (Triode)
+-0.9.2  - 10/25/2004
+        - Fixed error in checkwww under redhat9.x/fedora
+-0.9.1  - 03/12/2004
+        - Changes checkx module to check the running processes, in case the user          put in options on the CLI.
+        - Close files/filepointers left open in checkfiles, checkhostfiles (Nordi)
+- 0.9.0 - 01/09/2004
+        - Tested on Fedora Core 1, Suse 9 (AMD64)
+        - Should run fine on slackware now, thanks to JTO. 
+        - Changed checkbpass to not print out boot loader password, just warn.
+        - Changed checkx to check fs under X11
+- 0.8.9 - 12/20/2003
+        - Added checkftp to check basic settings (proftpd, pure-ftpd), mostly gentoo).
+        - checkmd5 also excluding proc, dev, var and tmp. (thanks unspwan)
+        - checkx module should now be able to be excluded. (thanks unspawn)
+        - Typo fixes all over the place. (thanks also to unspawn)
+- 0.8.8 - 10/22/2003
+        - Fixed typo in checkx, would not check for gdm.conf file.
+          (thanks to Rozman)
+- 0.8.7 - 10/20/2003
+        - Fixed problem with checkpasswd, can now handle any length passwd file.
+        - Added protcol check for ssh checks
+        - Fixed makefile errors
+        - Added checkx module to check for X tcp listening
+        - Added check to checkwww for nobody running apache/httpd
+        - Kludged checkmd5 module, skips dev and proc for now until we
+          fix md5sum. See module for more details.
+- 0.8.6 - 10/10/2003
+        - Added checkbpass module to check for password in boot loader 
+          (grub/lilo only)
+        - Added checkipv4 package to check more defualt network "stuff".
+        - fixed some typos/errors in the advanced help.
+        - manpage updated.
+        - README updated and dependencies listed.
+- 0.8.5 - 10/03/2003
+	- Changed command line argument list, and added option to 
+	  exclude an arbitrary number of modules from being run.
+	- README.exclude file gives more info on -x option
+	- Cleanups in lsatmain, it was not closing some open files. :O
+	- Advanced help now available via the -a option; standard help
+	  is available via -h, -?, --help. --usage gives condensed 
+	  usage options.
+	- Code cleanups, should compile under cc and not just gcc now
+	- checknetp was checking under all OSs, did not work with Solaris, etc
+	  so checknetp is no longer run unless the OS is linux.
+- 0.8.1 - 08/09/2003 
+	- Fixed checkumask module, spitting out wrong entries on some systems.
+	- Fixed checkset module on systems with/dev/(watchdog,MAKEDEV,ibcs,etc)
+	- Fixed checkmodules on systems running module enable kernel+lcap.
+	(Above fixes by unspawn)
+	- Added checknetp module to check if network interface is in PROMISC.
+	- modules.html and README.modules files updated
+- 0.8.0 - 08/01/2003
+	- Fixed problem in checkwww module, newline char out of place.
+	- Added chkrootkit to LSAT. Run this with the -c option.
+	  (see http://www.chkrootkit.org, or thank
+	  Nelson Murilo: nelson (at) pangeia (dot) com (dot) br ) 
+	- Raised release level to 0.8.0, should be closer to one. :)
+- 0.7.3 - 07/30/2003
+	- fixed problem in checkpasswd under solaris.
+	- fixed problem in checkmd5 under solaris.
+	- checkmd5 should now do diffs. 
+- 0.7.2 - 06/27/2003
+        - fixed a problem in checkpasswd module. 
+	- Added checks for + entries in checkpasswd module.
+	- Added checks for empty passwords in checkpasswd module.
+- 0.7.1 - 06/18/2003
+        - cleaned and fixed checkinetd module, problems with xinetd checking.
+	- checkumask module cleaned up. A lot.
+	- Fixed problem in checknet module under gentoo
+        - Fixed problem in checkmd5 under all distros. Possible error with filenames that contain spaces
+- 0.7.0 - 06/06/2003
+	- Fixed up the md5sum module call from main. It was confusing and incorrect.
+	- Added nmap run to checknet module. (Checks to see if nmap is installed
+          and if so, runs it and outputs the scan.)
+        - Cleaned up some spelling and whitespace in a few modules and lsatmain
+	- Added checklogging module to check for auth and authpriv facilities.
+	- Added checkinittab module. Cheks to see that default runlevel is not 5.
+	- Added check for /etc/banners to checkissue module
+	- Added extra check for xinetd.conf file in checkinetd module
+- 0.6.9 - 05/29/2003
+        - LSAT ported to Mac OSX. Many modules modified for this. (Triode)
+	- checkumask had problems in RedHat 9.0, fixed (Ting Meng Yean)
+        - checkwrite split into two outpus (suggested by Eric Gerbier)
+- 0.6.8 - 05/14/2003
+	- Added checkrcperms module to check files in init.d 
+	- Added to securitylinks.txt file
+- 0.6.7 - 03/20/2003
+	- checkpasswd was reporting that the sys account needed
+	  to be removed. This has been changed, and more accounts
+          that are not needed have been added. 
+- 0.6.6 - 03/18/2003
+        - Added -w option, output file in html
+	- Added a check for /etc/hosts.equiv to checkhostsfiles
+	- Added a check for /etc/hosts.lpd to checkhostsfiles
+- 0.6.5 - 02/14/2003
+	- major logical errors in checkinetd fixed.
+	- lsatmain was not detecting Solaris/SunOS, fixed.
+	- forcing the distro to be gentoo was not working, fixed.
+	- Solaris failing in checkpkgs, checkinetd, checkssh, checkwww,
+          checkopenfiles, fixed.
+        - checkwww not checking for httpd, just apache.
+- 0.6.4 - 01/31/2003
+        - Fixed bug in lsatmain (if statement for checkmd5)
+        - Added check to checkissue to check /etc/motd
+        - Added checksecuretty to check for ttys other than tty[1-6]
+- 0.6.3 - 01/28/2003
+        - Added checkmodules file which checks for loadable kernel 
+          modules being enabled
+        - A make cleanall will do the same as make clean + rm Makefile and 
+          config cache, log, status, lsat.out/old, lsatmd5.out/old
+        - Added checkmd5 module which will generate a list of md5 sums of
+          all regular files on the system. This list will not be in lsat.out,
+          but in lsatmd5.out instead.
+        - checkmd5 runs only when -m switch is used.
+        - Small output error in checkwww fixed.
+- 0.6.2 - 01/23/2003
+        - Added checkwww module to check apache conf files.
+        - Checkwww also checks that root is not running apache.
+        - Some errors in regards to -v switch fixed.
+        - Fixed error in checkpkgs for debian.
+        - Added more links to securitylinks.txt file.
+        - Updated the man page.
+        - Updated modules.html.
+        - README.modules updated/in sync with modules.html.
+        - Added an INSTALL file to the distribution.
+- 0.6.1 - 01/21/2003
+	- Added some items to checkrc.c
+        - Added checkissue which checks /etc/issue(.net)
+        - Added checkopenfiles which checks open files
+        - Added -l switch to not check open files :)
+        - Minor code cleanups, spelling fixes, etc.
+- 0.6.0 - 10/23/2002
+	- Fixed some multi-line string literals in checkssh.c
+        - Modified some checks to work under gentoo linux
+- 0.5.9 - 07/11/2002
+        - Added -x option -- skip local SUID/GUID and world/group read/write.
+          The above will speed things up if the user does not want to check
+          the local files again.
+        - Added checkcfg module (RedHat and derivative specific).
+          checkcfg prints output of chkconfig --list and is the last module run
+          in lsat. This gives the user a visual inspection of all services run
+          in each runlevel.
+- 0.5.8 - 06/29/2002
+	- various buffer and index checks added (Nordi)
+        - some basic sshd config checks added. (Triodeo, Nordi)
+- 0.5.7 - 05/30/2002
+        - checkinetd should really work now, verified on RedHat 7.x (Nordi & Triode, mostly Nordi)
+        - checkftpusers fixed. It was saying ftpusers did not exist when it did. (Triode)
+        - fixed more symlink attacks, in checkfiles (Nordi)
+        - all tempfiles conform to lsat standard now (Nordi)
+- 0.5.6 - 05/17/2002
+        - fixed more output typos
+	- fixed tempfile problem in checkset module (Triode)
+	- checkinetd did not always find inetd.conf and xinetd.d
+	- fixed possible false negatives in checkinetd
+	- fixed logical error in check for sticky dirs
+	- some small stuff
+	Nordi
+- 0.5.5 - 05/08/2002
+        - Fixed error in checkpkgs, not reporting bad packages.
+        - Fixed error in dostuff module, failure on some shellcode.
+        - Added checkrpm module and README.checkrpm for checkrpm module. Checkrpm
+          checks and reports rpm integrity on RedHat based systems.
+        - Checkrpm is enabled by the -r switch, it doe not run if lsat is given with no args.
+- 0.5.4 - 05/06/2002
+        - Fixed some incorrect variable defs. (Nordi)
+        - unused variables removed from modules. (Nordi)
+        - checkrc module had problem with large amounts of services, fixed. (Nordi)
+        - verbose output cleaned up, out of alignment. (Nordi)
+        - lsat now prints module name it is running during execution.
+	- -s option added for silent mode, lsat only reports starting and ending in this mode.
+        - checkfiles module now checks for files with no owner and no group.
+- 0.5.2 - 05/03/2002
+        - checknetforward module was not in lsatmain. :O
+        - fixed output in checknetforward, should be better.
+        - added checklimits module to check limits.conf file.
+- 0.5.1 - 05/02/2002
+        - checkinetd was still segfaulting under linux kernel 2.4. FIXED. 
+- 0.5.0 - 05/02/2002
+        - Added large section in README.modules on writing modules with the new dostuff module.
+        - Added modules that were missing in README.modules.
+        - Added function in lsatmain to clean up mess if a module bombs out.
+        - Output format has been changed slightly in appearance.
+        - Modified all modules to use module dostuff for creating, writing, deleting tempfiles
+          and for writing out to outfile. This should make module creation easier as one can
+          concentrate on module content and not opening/writing/etc files.
+        - checkinetd broken under redhat 7.x (or those that use xinetd.d) Should be FIXED.
+        - Cleaned up verbose msgs.
+- 0.4.5 - 04/26/2002
+        - Added checknetforward module which checks for IPV4 forwarding on the system. 
+        - Since all files written are now chmod 600, umask is no longer changed in any lsat program. 
+          A note is given to the user to check their umask settings.
+        - Fixed output typo in checkwrite (it checks suid/sgid files/directories).
+        - Header typo in checkpkgs.
+        - Added more packages to check in checkpkgs module.
+        - checkpkgs module was not checking all pkgs. Fixed.
+        - Added check that vmlinuz is chmod 644 in checkfiles.
+	- Added check for syslog.pid (syslogd.pid) to make sure it is chmod 644 in
+          checkfiles.
+	- Fixed error in checkumask module. Was not working properly on Mandrake.
+- 0.4.4 - 04/19/2002
+	- Fixed possible buffer overrun in lsatmain.c
+	- Fixed possible buffer overrun/symlink attack in checkftpusers and 
+	  checkrc modules. 
+	- More typos fixed.
+	- Thanks to Nordi for the tipoff on the buffer/symlink attacks I missed 	  while trying to fix them in 0.4.3.
+- 0.4.3 - 04/19/2002 -
+	- Added checkkbd function to check for ctrl-alt-del or STOP-A disable.
+ 	- Fixed file perms. LSAT was not making the output file chmod 0600.
+	- Fixed module tempfiles. These were not being created chmod 0600 either.
+	- The two above require include fcntl.h. I hope this does not break things.
+        - Added more docs to lsatmain.c
+- 0.4.2 - 04/18/2002 -
+	- Again, more docs/cleanups in lsatmain.c
+	- added securitylinks.txt file which has links to security related webpages.
+	- Added checkrc module. Checks rc scripts in /etc/rc.d/init.d or 
+	  /etc/rcn.d depending on which system it is on.
+	- Added checkftpusers module. This checks to see that all users
+	  in /etc/passwd are in /etc/ftpusers. 
+	- Set umask before writing any files.
+	- Set umask back to sensible value, regardless of previous value...
+          (done so if user modifies files after running lsat the user will have a sensible umask)
+	- lsat bails if it can not set umask.
+	- Fixed error msg typos in lsatmain.c, checknet.c and checkfiles.c
+- 0.4.0 - 04/15/2002 -
+	- Unused vars in checkpkg removed.
+	- Fixed bug in checkpasswd. (open file problem)
+        - Now using mkstemp in lsatmain.c instead of just making a file.
+          (this should be a little more secure in case of a tempfile exploit)
+	- Many typos in checkdotfiles fixed.
+	- Error msgs in all modules will (should) report module name on error.
+	- Now using mkstemp in all modules. 
+	- In lsatmain.c default value for distribution variable is now
+	  redhat (1), since it errors out if not set at all. - Thanks: nordi
+	- Fixed buffer overflow vulnerability in checknet. - Thanks: nordi
+	- Fixed possible buffer overrun vulnerability in all modules.
+	- Typo in checknet error msg, fixed.
+	- more documentation added to lsatmain.c
+- 0.3.3 - 04/12/2002 -
+	- checkfiles now checks the following:
+	  That utmp, wtmp, mtab, mtod are chmod 644
+	  That /etc, /usr/etc, /bin, /usr/bin, /sbin, /usr/sbin, /tmp
+          and /var/tmp are owned by root.
+	- Various minor bugfixes
+- 0.3.2 - 04/10/2002 -
+	- Minor bugfixes in checkumask file
+	- lsatmain.c now checks for redhat or debian distro
+	- checkrpms is now checkpkgs and will check rpms if sys is
+	  redhat or debs if sys is debian
+	- Various small bugfixes
+- 0.3.0 - 04/08/2002 -
+	- Major bug fixes. After 0.2.0 release it was noted that
+	  several check files were still not correct. These have
+	  been fixed and tested (RedHat 6.2/sparc).
+	- Added checkumask module to check default umasks on system.
+	- Updated INSTALL file
+	- Updated README.modules
+	- Updated README
+- 0.2.0 - 04/07/2002 -
+	- Major bug fixed. Prior releases have modules which do
+	  not fully check for what they are supposed to.
+	- Added autoconf feature (thanks Fred Ollinger)
+	- Added prelimenary manpage (thanks Fred Ollinger)
+- 0.1.9 - 04/07/2002 - 
+	- Fixed passwd check. Also includes check for uid=0 on other users.
+- 0.1.8 - 04/06/2002 - 
+	- Check /dev for non block/char files.
+	- xinetd.d check broken on RedHat 7.2 FIXED
+	- Added module for checking /etc/passwd. BROKEN.
+- 0.1.7 - 04/05/2002 -
+	- Added check for .rhosts/.netrc files to checkdotfiles module.
+	- Added check for non block/char files in /dev to checkset module. 
+	- xinetd.d checking is functional in checkinetd module.
+	- verbose parameter added to all functions, -v now works.
+	- release and kernel checking changed to be more generic.
+- 0.1.6 - 04/03/2002 -
+	- Added checkdotfiles module which checks for .exrc and .forward files.
+	- Added checkwrite module which checks for world writable files/dirs.
+	- Added INSTALL file.
+- 0.1.5 - 04/03/2002 -
+	- Did not change version number, but did the following:
+	- tarball/zipfile now untars/zips into lsat-<version> directory.
+	- Added README file to the package.
+	- Added this changelog to the package.
+	- Added md5 checksums for the tar/zipfile. They are on the homepage.
+- 0.1.5 - 04/02/2002 -
+	- Fixed checkinetd.c, added checks for hosts.allow and deny files.
+	- lsatmain.c now reports finishing.
+	- Added checkset module to check setuid/setgid files.
+	- Added more documentation throughout.
+- 0.1.1 - 04/01/2002 -
+	- Fixed typo in checkinetd.c (zinet.d -> xinetd.d).
+	- Thanks: Eerik Kiskonen 
+- 0.1   - 04/01/2002 -
+	- Initial release 
+</pre>
+</body>
+</html>
+

@@ -1,0 +1,130 @@
+.\" Manpage for lsat
+.\" Contact number9@dimlight.org to correct errors or typos.
+.TH man 1 "06 Jun 2019" "0.9.8.6" "lsat man page"
+.SH NAME 
+lsat \- a security auditing tool
+.SH SYNOPSIS
+lsat [options] 
+.SH DESCRIPTION
+.B lsat
+Linux Security Auditing Tool (LSAT) is a post install security auditing tool. It is modular in design, so new features can be added quickly. It checks inetd entries and scans for unneeded RPM packages. It is being expanded to work with Linux distributions other than Red Hat, and checks for kernel versions.
+.PP
+Output is in lsat.out. -w will give output in html format. On subsequent runs, the previous output is in lsat.old.
+
+.SH OPTIONS
+.IP -a
+	Show LSAT advanced help
+.IP -d 
+        diff current and old md5 runs, output in lsatmd5.diff
+.IP -h or --help  
+	Show LSAT help
+.IP -m <distribution>
+	Force a specific distribution test
+	Names are: redhat, debian, solaris, gentoo, macosx, slackware, ubuntu, linuxmint
+.IP -o <filename>
+	Output filename, default is last.out
+.IP -r
+	Check rpm integrity. RedHat or Mandrake only.
+.IP -s
+	Be silent. No output at all.
+.IP -x <filename>
+        Filename is a text file consisting of modules to exclude from being run. This should be a comma, tab or newline delimited file, with just the name(s) below one wishes to exclude. Module names (with a small description) are:
+.IP
+    bpas           check for bootloader passwd
+    cfg             check runlevel daemons (redhat)
+    disk 			check for disk space and mount points
+    dotfiles        check for dotfiles
+    files           check for sticky bits, etc
+    forward         check for network forwarding
+    ftp             check for common ftp misconfigurations
+    ftpusers        check ftpusers file for bad entries
+    hostfiles		check hosts.allow and hosts.deny files
+    inetd           check for unneeded services
+    inittab         check runlevel, etc.
+    ipv4            check for other things in ipv4
+    issue           check issue banner
+    kbd             check kbd/login perms
+    limits          check limits file
+    logging         check for enough logging
+    md5             perform md5 of all files on sys
+    modules         check for loadable kern mod.
+    net             check network
+    open            check open files
+    passtime		check for password expiration info on users
+    passwd          check passwd file for bad entries
+    perms           check permissions on files
+    pkgs            check for unwanted packages
+    pkgsupdate		check for available software updates
+    promisc         are we in promisc mode?
+    rc              check for unwanted rc files
+    rpm             perform rpm integrity check
+    securetty       check secure tty
+    services		(try to) list all services that start at boot
+    set             check for SUID files
+    ssh             check ssh config
+    startx          check for tcp listening in X
+    umask           check default umask
+    write           check world read/write files
+    www             output in html
+.IP -v
+	Be verbose about it.
+.IP -w
+    Output file is in html format.
+.PP
+.B MODULES
+.PP
+	Current modules are:
+.IP
+	checkbpass  check password module
+	checkcfg    checks configuration files
+	checkdisk   checks disk 
+	checkdotfiles   checks all dot files
+	checkfiles  checks all files
+	checkftp    checks ftp settings
+	checkftpusers   checks for ftp users
+	checkhostsfiles     checks host files
+	checkinetd  checks inet
+	checkinittab    checks inittab settings
+	checkipv4   checks network settings
+	checkissue  checks system issue
+	checkkbd    checks keyboards
+	checklimits     checks system linits
+	checklistening  checks for listening services
+	checklogging    checks the logging systems
+	checkmd5 md5    checksum of files
+	checkmodules    checks for modules
+	checknet    checks the network, scans
+	checknetforward     checks forwarding
+	checknetp   checks net modes
+	checkopenfiles  checks for open files
+	checkpasstime   checks for password expiration
+	checkpasswd     checks password file
+	checkpkgs   checks system packages
+	checkpkgupdate  checks for system updates
+	checkrc     checks the rc system
+	checkrcperms    checks the rc system permissions
+	checkrpm    checks rpm
+	checksecuretty  checks securetty settings
+	checkservices   checks on system services
+	checkset    checks file settings
+	checkssh    checks sshd settings
+	checkumask  checks for default umask
+	checkwrite  checks for writable files
+	checkwww    checks for www settings
+	checkx  check or X windows settings
+	
+.PP
+	A breif description is included in each module. Writing a module is fairly easy and straightforward. See README.modules for more information.
+
+.SH LICENSE
+
+	This software is licensed under the GNU/GPL, please see http://www.gnu.org for more details.
+
+.SH BUGS
+
+	Doesn't correct the problems that it discovers (yet).
+
+
+.SH AUTHOR
+
+	Robert Minvielle, Ph.D. <number9@dimlight.org>

@@ -1,0 +1,1077 @@
+
+****************************************
+default init level is not set to 5. Good.
+
+
+****************************************
+Consider placing:
+
+ auth.*				/var/log/secure
+
+ in your /etc/syslog.conf file.
+
+
+****************************************
+Consider placing:
+
+ authpriv.*				/var/log/secure
+
+ in your /etc/syslog.conf file.
+
+
+****************************************
+The last 100 (or less) failed login attempts on the system
+
+Login       Failures Maximum Latest                   On
+
+root            0        0   12/31/69 18:00:00 -0600  
+daemon          0        0   12/31/69 18:00:00 -0600  
+bin             0        0   12/31/69 18:00:00 -0600  
+sys             0        0   12/31/69 18:00:00 -0600  
+sync            0        0   12/31/69 18:00:00 -0600  
+games           0        0   12/31/69 18:00:00 -0600  
+man             0        0   12/31/69 18:00:00 -0600  
+lp              0        0   12/31/69 18:00:00 -0600  
+mail            0        0   12/31/69 18:00:00 -0600  
+news            0        0   12/31/69 18:00:00 -0600  
+uucp            0        0   12/31/69 18:00:00 -0600  
+proxy           0        0   12/31/69 18:00:00 -0600  
+www-data        0        0   12/31/69 18:00:00 -0600  
+backup          0        0   12/31/69 18:00:00 -0600  
+list            0        0   12/31/69 18:00:00 -0600  
+irc             0        0   12/31/69 18:00:00 -0600  
+gnats           0        0   12/31/69 18:00:00 -0600  
+nobody          0        0   12/31/69 18:00:00 -0600  
+systemd-network       0        0   12/31/69 18:00:00 -0600  
+systemd-resolve       0        0   12/31/69 18:00:00 -0600  
+syslog          0        0   12/31/69 18:00:00 -0600  
+messagebus       0        0   12/31/69 18:00:00 -0600  
+_apt            0        0   12/31/69 18:00:00 -0600  
+uuidd           0        0   12/31/69 18:00:00 -0600  
+kernoops        0        0   12/31/69 18:00:00 -0600  
+avahi-autoipd       0        0   12/31/69 18:00:00 -0600  
+usbmux          0        0   12/31/69 18:00:00 -0600  
+lightdm         0        0   12/31/69 18:00:00 -0600  
+dnsmasq         0        0   12/31/69 18:00:00 -0600  
+rtkit           0        0   12/31/69 18:00:00 -0600  
+saned           0        0   12/31/69 18:00:00 -0600  
+nm-openvpn       0        0   12/31/69 18:00:00 -0600  
+avahi           0        0   12/31/69 18:00:00 -0600  
+colord          0        0   12/31/69 18:00:00 -0600  
+speech-dispatcher       0        0   12/31/69 18:00:00 -0600  
+pulse           0        0   12/31/69 18:00:00 -0600  
+hplip           0        0   12/31/69 18:00:00 -0600  
+geoclue         0        0   12/31/69 18:00:00 -0600  
+number9         0        0   12/31/69 18:00:00 -0600  
+nvidia-persistenced       0        0   12/31/69 18:00:00 -0600  
+cups-pk-helper       0        0   12/31/69 18:00:00 -0600  
+statd           0        0   12/31/69 18:00:00 -0600  
+
+****************************************
+This is the list of users who have logged into the system
+ This includes reboots of the system.
+ Username  tty  IPaddress  login  logout  duration
+
+number9  tty7         0.0.0.0          Thu Jun 13 09:41:39 2019   gone - no logout
+reboot   system boot  0.0.0.0          Thu Jun 13 09:40:56 2019   still running
+number9  tty7         0.0.0.0          Thu Jun 13 05:28:23 2019 - Thu Jun 13 06:32:17 2019  (01:03)
+reboot   system boot  0.0.0.0          Thu Jun 13 05:28:08 2019 - Thu Jun 13 06:32:18 2019  (01:04)
+number9  tty7         0.0.0.0          Wed Jun 12 15:32:14 2019 - Wed Jun 12 21:29:32 2019  (05:57)
+reboot   system boot  0.0.0.0          Wed Jun 12 15:32:02 2019 - Wed Jun 12 21:29:33 2019  (05:57)
+number9  tty7         0.0.0.0          Tue Jun 11 15:30:07 2019 - Wed Jun 12 06:25:41 2019  (14:55)
+reboot   system boot  0.0.0.0          Tue Jun 11 15:28:48 2019 - Wed Jun 12 06:25:42 2019  (14:56)
+number9  tty7         0.0.0.0          Tue Jun 11 05:24:16 2019 - Tue Jun 11 06:16:59 2019  (00:52)
+reboot   system boot  0.0.0.0          Tue Jun 11 05:23:40 2019 - Tue Jun 11 06:17:00 2019  (00:53)
+number9  tty7         0.0.0.0          Mon Jun 10 15:46:47 2019 - Mon Jun 10 21:48:04 2019  (06:01)
+reboot   system boot  0.0.0.0          Mon Jun 10 15:33:46 2019 - Mon Jun 10 21:48:05 2019  (06:14)
+number9  tty7         0.0.0.0          Mon Jun 10 05:24:10 2019 - Mon Jun 10 06:25:23 2019  (01:01)
+reboot   system boot  0.0.0.0          Mon Jun 10 05:23:31 2019 - Mon Jun 10 06:25:24 2019  (01:01)
+number9  tty7         0.0.0.0          Sun Jun  9 06:24:25 2019 - Sun Jun  9 21:16:34 2019  (14:52)
+reboot   system boot  0.0.0.0          Sun Jun  9 06:24:14 2019 - Sun Jun  9 21:16:35 2019  (14:52)
+number9  tty7         0.0.0.0          Sat Jun  8 06:18:38 2019 - Sat Jun  8 21:10:53 2019  (14:52)
+reboot   system boot  0.0.0.0          Sat Jun  8 06:17:50 2019 - Sat Jun  8 21:10:54 2019  (14:53)
+number9  tty7         0.0.0.0          Fri Jun  7 13:19:47 2019 - Fri Jun  7 21:21:52 2019  (08:02)
+reboot   system boot  0.0.0.0          Fri Jun  7 13:19:08 2019 - Fri Jun  7 21:21:53 2019  (08:02)
+number9  tty7         0.0.0.0          Fri Jun  7 05:23:45 2019 - Fri Jun  7 06:26:56 2019  (01:03)
+reboot   system boot  0.0.0.0          Fri Jun  7 05:23:00 2019 - Fri Jun  7 06:26:56 2019  (01:03)
+number9  tty7         0.0.0.0          Thu Jun  6 17:26:25 2019 - Thu Jun  6 21:25:02 2019  (03:58)
+reboot   system boot  0.0.0.0          Thu Jun  6 17:26:17 2019 - Thu Jun  6 21:25:03 2019  (03:58)
+number9  tty7         0.0.0.0          Thu Jun  6 07:21:09 2019 - Thu Jun  6 08:22:26 2019  (01:01)
+reboot   system boot  0.0.0.0          Thu Jun  6 07:20:40 2019 - Thu Jun  6 08:22:26 2019  (01:01)
+number9  tty7         0.0.0.0          Thu Jun  6 06:33:21 2019 - Thu Jun  6 06:42:58 2019  (00:09)
+reboot   system boot  0.0.0.0          Thu Jun  6 06:33:12 2019 - Thu Jun  6 06:42:59 2019  (00:09)
+number9  tty7         0.0.0.0          Thu Jun  6 05:16:50 2019 - Thu Jun  6 06:23:42 2019  (01:06)
+reboot   system boot  0.0.0.0          Thu Jun  6 05:16:10 2019 - Thu Jun  6 06:23:43 2019  (01:07)
+number9  tty7         0.0.0.0          Wed Jun  5 17:08:52 2019 - Wed Jun  5 21:09:44 2019  (04:00)
+reboot   system boot  0.0.0.0          Wed Jun  5 17:08:08 2019 - Wed Jun  5 21:09:45 2019  (04:01)
+number9  tty7         0.0.0.0          Wed Jun  5 05:21:02 2019 - Wed Jun  5 06:31:00 2019  (01:09)
+reboot   system boot  0.0.0.0          Wed Jun  5 05:20:20 2019 - Wed Jun  5 06:31:01 2019  (01:10)
+number9  tty7         0.0.0.0          Tue Jun  4 16:58:37 2019 - Tue Jun  4 21:21:52 2019  (04:23)
+reboot   system boot  0.0.0.0          Tue Jun  4 16:58:26 2019 - Tue Jun  4 21:21:53 2019  (04:23)
+number9  tty7         0.0.0.0          Tue Jun  4 05:25:40 2019 - Tue Jun  4 06:28:39 2019  (01:02)
+reboot   system boot  0.0.0.0          Tue Jun  4 05:14:59 2019 - Tue Jun  4 06:28:40 2019  (01:13)
+number9  tty7         0.0.0.0          Mon Jun  3 17:01:05 2019 - Mon Jun  3 21:28:58 2019  (04:27)
+reboot   system boot  0.0.0.0          Mon Jun  3 16:53:25 2019 - Mon Jun  3 21:28:59 2019  (04:35)
+number9  tty7         0.0.0.0          Mon Jun  3 05:23:58 2019 - Mon Jun  3 06:28:14 2019  (01:04)
+reboot   system boot  0.0.0.0          Mon Jun  3 05:23:16 2019 - Mon Jun  3 06:28:15 2019  (01:04)
+number9  tty7         0.0.0.0          Sun Jun  2 06:14:30 2019 - Sun Jun  2 21:04:47 2019  (14:50)
+reboot   system boot  0.0.0.0          Sun Jun  2 06:13:26 2019 - Sun Jun  2 21:04:48 2019  (14:51)
+
+wtmp begins Sat Jun  1 21:18:12 2019
+
+****************************************
+This is a list of .exrc files found
+
+
+****************************************
+This is a list of .forward files found on the system:
+
+
+****************************************
+This is a list of .rhosts files found on the system:
+
+
+****************************************
+This is a list of .netrc files found on the system
+
+
+****************************************
+This is a list of dotfiles found on the system
+
+
+****************************************
+Please consider removing these system accounts.
+Check to see if you need them for your system applications before removing.
+Also, consult the securitylinks.txt file for more information.
+
+sync
+man
+lp
+news
+uucp
+
+****************************************
+The following accounts are UID 0 in /etc/passwd. Only root should be UID 0.
+Remove if needed.
+
+
+****************************************
+Remove the following entries (if any) from the
+ respective passwd/group file(s)
+
+
+****************************************
+The following accounts have no/empty passwords
+
+
+****************************************
+Output of pwck, note non existent directories, etc
+
+
+****************************************
+Output of grpck, note groups it think should be deleted.
+
+
+****************************************
+The following UID numbers are duplicates
+Please remove duplicate UID accounts.
+
+****************************************
+Checking default umask on system:
+
+Default umask should be 022, 027 or 077. 002 is ok for RedHat.
+Here are the filenames, and the umask number
+found in each. Please read through the file and ensure that is what you want.
+
+
+****************************************
+While in checkftpusers, it is noted that your /etc/ftpusers file does not exist, or is not readable.
+This is OK if you are not root, not running ftp or your ftp daemon does not use /etc/ftpusers.
+Please check your ftp configuration manually.
+
+
+****************************************
+The following services were found in /etc/rc(2/3).d
+Coonsider removing or disabling unnecessary services.
+
+
+****************************************
+Default limits hashed out in limits.conf.
+Check /etc/security/limits.conf for the default entry.
+Make sure to set hard and soft limits for default "*",
+or for individual users.
+
+
+****************************************
+Output from ulimit, check to see if these are reasonable limits.
+Resource limits can help prevent DOS attacks,
+read up on them if you need to.
+
+time(seconds)        unlimited
+file(blocks)         unlimited
+data(kbytes)         unlimited
+stack(kbytes)        8192
+coredump(blocks)     0
+memory(kbytes)       unlimited
+locked memory(kbytes) 16384
+process              31314
+nofiles              1024
+vmemory(kbytes)      unlimited
+locks                unlimited
+rtprio               0
+
+****************************************
+sshd config file entries
+Make sure these are commented out.
+
+****************************************
+Protcol 2 not found in sshd config, or you are doing 1,2.
+Change to protcol 2 only.
+
+****************************************
+This is the lsof output, diff this against a previous run.
+
+COMMAND  PID    USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+firefox 1779 number9   59u  IPv6 267024      0t0  TCP anode:47344->[2600:9000:20be:4200:0:98b3:bbc0:93a1]:https (ESTABLISHED)
+firefox 1779 number9   87u  IPv6 267039      0t0  TCP anode:53050->dfw28s02-in-x03.1e100.net:https (ESTABLISHED)
+firefox 1779 number9   89u  IPv6 266982      0t0  TCP anode:36738->dfw06s49-in-x04.1e100.net:https (ESTABLISHED)
+firefox 1779 number9   97u  IPv4 267162      0t0  TCP anode:43468->151.101.193.28:https (ESTABLISHED)
+firefox 1779 number9  101u  IPv4 267155      0t0  TCP anode:42190->186.62.241.35.bc.googleusercontent.com:https (ESTABLISHED)
+firefox 1779 number9  102u  IPv6 267028      0t0  TCP anode:40264->[2606:4700::6813:c797]:https (ESTABLISHED)
+firefox 1779 number9  104u  IPv4 267038      0t0  TCP anode:49762->ec2-52-4-26-171.compute-1.amazonaws.com:https (ESTABLISHED)
+firefox 1779 number9  118u  IPv4  31073      0t0  TCP anode:38016->ec2-54-213-41-50.us-west-2.compute.amazonaws.com:https (ESTABLISHED)
+firefox 1779 number9  122u  IPv4 267029      0t0  TCP anode:50640->ec2-34-235-85-87.compute-1.amazonaws.com:https (ESTABLISHED)
+firefox 1779 number9  129u  IPv4 265728      0t0  TCP anode:33982->151.101.1.69:https (ESTABLISHED)
+firefox 1779 number9  131u  IPv6 267033      0t0  TCP anode:46334->[2600:9000:20be:ae00:a:e61c:dd00:93a1]:https (ESTABLISHED)
+firefox 1779 number9  168u  IPv4 267037      0t0  TCP anode:37018->a23-44-207-51.deploy.static.akamaitechnologies.com:https (ESTABLISHED)
+firefox 1779 number9  169u  IPv6 267555      0t0  TCP anode:52934->dfw28s02-in-x0a.1e100.net:https (ESTABLISHED)
+firefox 1779 number9  170u  IPv4 265731      0t0  TCP anode:51076->104.16.30.34:https (ESTABLISHED)
+firefox 1779 number9  172u  IPv6 262067      0t0  TCP anode:49336->dfw28s05-in-x01.1e100.net:https (ESTABLISHED)
+
+****************************************
+/etc/issue exists. Make sure it does not have any 
+ system specific information in it.
+
+
+****************************************
+/etc/issue.net exists. Make sure it does not have any 
+ system specific information in it.
+
+
+****************************************
+/etc/motd does not exist.
+
+
+****************************************
+/etc/banners dir not found. 
+Check securitylinks.txt for more info.
+
+
+****************************************
+No ExecCGIs found. Good.
+
+****************************************
+These are the kernel modules that are loaded on the system
+as given by the output of modprobe -c -l
+Check to see if they are really needed.
+
+
+****************************************
+/etc/securetty has tty's over 6.
+Consider disabeling all ttys over tty6 (console).
+
+
+****************************************
+/etc/securetty has ttys other than the console.
+Consider removing any lines in /etc/securetty other than tty[1-6].
+
+
+****************************************
+This is a list of files in /etc/init.d whose permissions are not set to 700.
+We recommend that you change the permissions of these files to 700.
+
+/etc/init.d/networking
+/etc/init.d/cryptdisks-early
+/etc/init.d/alsa-utils
+/etc/init.d/x11-common
+/etc/init.d/kerneloops
+/etc/init.d/uuidd
+/etc/init.d/kmod
+/etc/init.d/plymouth
+/etc/init.d/cron
+/etc/init.d/mintsystem
+/etc/init.d/acct
+/etc/init.d/ufw
+/etc/init.d/procps
+/etc/init.d/openvpn
+/etc/init.d/saned
+/etc/init.d/bluetooth
+/etc/init.d/apparmor
+/etc/init.d/lvm2
+/etc/init.d/cups-browsed
+/etc/init.d/console-setup.sh
+/etc/init.d/plymouth-log
+/etc/init.d/rpcbind
+/etc/init.d/lightdm
+/etc/init.d/anacron
+/etc/init.d/hddtemp
+/etc/init.d/speech-dispatcher
+/etc/init.d/grub-common
+/etc/init.d/lvm2-lvmetad
+/etc/init.d/lm-sensors
+/etc/init.d/dbus
+/etc/init.d/rsync
+/etc/init.d/apport
+/etc/init.d/nfs-common
+/etc/init.d/avahi-daemon
+/etc/init.d/pppd-dns
+/etc/init.d/lvm2-lvmpolld
+/etc/init.d/cups
+/etc/init.d/hwclock.sh
+/etc/init.d/mdadm-waitidle
+/etc/init.d/rsyslog
+/etc/init.d/keyboard-setup.sh
+/etc/init.d/cryptdisks
+/etc/init.d/network-manager
+/etc/init.d/acpid
+/etc/init.d/dns-clean
+/etc/init.d/udev
+/etc/init.d/irqbalance
+/etc/init.d/mdadm
+
+****************************************
+Check these ports in /etc/services to see what they are.
+Close all ports you do not need.
+
+Ports listening on this system:
+Protocol	Port
+
+tcp		111
+tcp		53
+tcp		631
+tcp6		*
+tcp6		631
+
+****************************************
+Output from nmap run on local IP(s)
+Check these services to see if they are critical.
+Disable services you do not need.
+
+
+Starting Nmap 7.60 ( https://nmap.org ) at 2019-06-13 21:04 CDT
+Initiating Ping Scan at 21:04
+Scanning 2 hosts [2 ports/host]
+Completed Ping Scan at 21:04, 0.00s elapsed (2 total hosts)
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 2 IP addresses (0 hosts up) scanned in 0.03 seconds
+
+****************************************
+Output from arp -a. 
+If you have arp poisoning, you would see a MAC address here.
+
+
+****************************************
+Output from netstat -i showing Kernel interface statistics
+
+Kernel Interface table
+Iface      MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
+enp5s0    1500   423290      0      0 0        111807      0      0      0 BMRU
+lo       65536     5047      0      0 0          5047      0      0      0 LRU
+
+****************************************
+Output from netstat -rn showing current routing
+
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+0.0.0.0         192.168.169.1   0.0.0.0         UG        0 0          0 enp5s0
+169.254.0.0     0.0.0.0         255.255.0.0     U         0 0          0 enp5s0
+192.168.169.0   0.0.0.0         255.255.255.0   U         0 0          0 enp5s0
+
+****************************************
+These network interfaces found to be in promisc mode using /sbin/ip.
+
+
+****************************************
+These network interfaces found to be in promisc mode using /sbin/ip.
+
+
+****************************************
+Can not locate grub or lilo configuration files.
+Please check that the password keyword is being used in them.
+
+
+****************************************
+/proc/sys/net/ipv4/icmp_echo_ignore_all exists, but is off.
+Consider enabling it by placing a one in it.
+You can do this with: echo "1" > /proc/sys/net/ipv4/icmp_echo_ignore_all
+
+
+****************************************
+You ignore all ICMP Echo broadcasts, good.
+
+
+****************************************
+You are denying source routed packets. Good.
+
+
+****************************************
+/proc/sys/net/ipv4/conf/all/accept_redirects exists, and you are accepting redirects.
+Consider disabling redirects by placing a zero in it.
+You can do this with: echo "0" > /proc/sys/net/ipv4/conf/all/accept_redirects
+
+
+****************************************
+You are ignoring bad err msgs in ipv4. Good.
+
+
+****************************************
+Logging of spoofed, etc packets is off.
+Consider turning on.
+You can do this with: echo "1" > /proc/sys/net/ipv4/conf/all/log_martians
+
+
+****************************************
+X seems to be listening for tcp connections.
+Consider turning this off with
+-nolisten tcp in your X startup file.
+
+
+****************************************
+readlink is not installed on this system,
+or it is not in the path,
+or I just can not find it.
+checklistening was not run.
+
+
+****************************************
+This is a list of mount points currently mounted.
+Make sure the permissions are reasonable (rw, ro, etc).
+
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+udev on /dev type devtmpfs (rw,nosuid,relatime,size=4008268k,nr_inodes=1002067,mode=755)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,noexec,relatime,size=814484k,mode=755)
+/dev/sdc3 on / type ext4 (rw,relatime,errors=remount-ro,data=ordered)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
+cgroup on /sys/fs/cgroup/unified type cgroup2 (rw,nosuid,nodev,noexec,relatime,nsdelegate)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)
+cgroup on /sys/fs/cgroup/rdma type cgroup (rw,nosuid,nodev,noexec,relatime,rdma)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=26,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=18752)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,pagesize=2M)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+mqueue on /dev/mqueue type mqueue (rw,relatime)
+sunrpc on /run/rpc_pipefs type rpc_pipefs (rw,relatime)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
+configfs on /sys/kernel/config type configfs (rw,relatime)
+/dev/md0 on /mnt/space type ext4 (rw,relatime,data=ordered)
+/dev/sdc1 on /boot type ext4 (rw,relatime,data=ordered)
+/dev/sdc4 on /home type ext4 (rw,relatime,data=ordered)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=814480k,mode=700,uid=1000,gid=1000)
+gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+
+****************************************
+This is a list of disk utilizations on the system, in kilobytes.
+Chcek to see that filesystems are not near capacity, etc.
+
+Filesystem      1K-blocks      Used  Available Use% Mounted on
+udev              4008268         0    4008268   0% /dev
+tmpfs              814484      1512     812972   1% /run
+/dev/sdc3        75852612  11503188   60453312  16% /
+tmpfs             4072404    124624    3947780   4% /dev/shm
+tmpfs                5120         4       5116   1% /run/lock
+tmpfs             4072404         0    4072404   0% /sys/fs/cgroup
+/dev/md0       1922599800 818303396 1006610900  45% /mnt/space
+/dev/sdc1          499656     78352     384608  17% /boot
+/dev/sdc4       155082864 122637644   24544336  84% /home
+tmpfs              814480        32     814448   1% /run/user/1000
+
+****************************************
+Checking services that start at boot.
+
+
+****************************************
+Lines found in hosts.allow
+Make sure you wish to allow the following:
+
+
+****************************************
+Did not find ALL:ALL in hosts.deny.
+Lines found in hosts.deny:
+
+
+****************************************
+List of packages that would be updated if the system packages were updated.
+Please review this list.
+Consider running a package list update also.
+
+bash
+bsdutils
+initramfs-tools-bin
+initramfs-tools-core
+initramfs-tools
+libext2fs2
+e2fsprogs
+libnss-systemd
+libudev1
+udev
+libnss-myhostname
+libsystemd0
+systemd
+libpam-systemd
+init-system-helpers
+perl-modules-5.26
+libperl5.26
+perl-base
+perl
+libdb5.3
+debconf-i18n
+debconf
+libpam0g
+libpam-modules-bin
+libpam-modules
+libpam-runtime
+systemd-sysv
+kmod
+libkmod2
+libuuid1
+libblkid1
+libmount1
+libfdisk1
+libsmartcols1
+fdisk
+util-linux
+mount
+busybox-initramfs
+login
+tar
+gcc-8-base
+gcc-8-base:i386
+libstdc++6
+libstdc++6:i386
+libquadmath0
+libitm1
+libmpx2
+liblsan0
+libtsan0
+libcc1-0
+libatomic1
+libgomp1
+libgcc1
+libgcc1:i386
+libapt-pkg5.0
+libapt-inst2.0
+apt
+apt-utils
+gpg-wks-client
+dirmngr
+gpg
+python3-apt
+python-apt-common
+python-apt
+gnupg-utils
+gnupg-l10n
+gpg-agent
+gpgsm
+gpgconf
+gnupg
+gpg-wks-server
+libunistring2
+libgnutls30
+libldap-common
+libldap-2.4-2
+gpgv
+libseccomp2
+console-setup-linux
+console-setup
+keyboard-configuration
+init
+ntfs-3g
+libntfs-3g88
+uuid-runtime
+chromium-codecs-ffmpeg-extra
+libavahi-common-data
+libavahi-common3
+libavahi-client3
+libglib2.0-data
+libglib2.0-bin
+libglib2.0-0
+libavahi-glib1
+libk5crypto3
+libkrb5support0
+libkrb5-3
+libgssapi-krb5-2
+libcom-err2
+cups-ipp-utils
+libcupscgi1
+libpng16-16
+libtiff5
+libcupsfilters1
+libcupsimage2
+libx11-data
+libxcb1:i386
+libxcb1
+libx11-6
+libx11-6:i386
+libxcb-render0
+libxcb-shm0
+libcairo2
+libpoppler-glib8
+poppler-utils
+libnss3
+libpoppler73
+cups-filters-core-drivers
+cups-core-drivers
+cups-server-common
+libcupsmime1
+libcupsppdc1
+ghostscript-x
+ghostscript
+libgs9
+libgs9-common
+libidn11
+cups-browsed
+cups-common
+cups-bsd
+cups-client
+cups-daemon
+libcups2
+cups
+cups-filters
+cups-ppdc
+libfontembed1
+python-ldb
+libldb1
+python-samba
+samba-common-bin
+samba-common
+libsmbclient
+samba-libs
+libwbclient0
+libasound2
+libasound2-data
+libgtk-3-common
+libgl1
+libgl1:i386
+libdrm-common
+libdrm2:i386
+libdrm2
+libx11-xcb1:i386
+libx11-xcb1
+libxcb-dri2-0:i386
+libxcb-dri2-0
+libxcb-dri3-0:i386
+libxcb-dri3-0
+libxcb-glx0:i386
+libxcb-glx0
+libxcb-present0:i386
+libxcb-present0
+libxcb-sync1:i386
+libxcb-sync1
+libllvm7:i386
+libllvm7
+libdrm-amdgpu1
+libdrm-amdgpu1:i386
+libdrm-intel1
+libdrm-intel1:i386
+libdrm-nouveau2
+libdrm-nouveau2:i386
+libdrm-radeon1
+libdrm-radeon1:i386
+libgl1-mesa-dri:i386
+libgl1-mesa-dri
+libglx-mesa0
+libglx-mesa0:i386
+libosmesa6
+libglapi-mesa
+libglapi-mesa:i386
+libglx0:i386
+libglx0
+libgles2
+libegl1
+libglvnd0
+libglvnd0:i386
+libwayland-server0
+libwayland-server0:i386
+libegl-mesa0
+libgbm1
+libwayland-client0
+libwayland-client0:i386
+libxcb-xfixes0
+libsdl2-2.0-0
+libgstreamer-gl1.0-0
+libwebkit2gtk-4.0-37
+libcogl20
+libwayland-egl1-mesa
+libwayland-egl1
+libgail-3-0
+libgtk-3-0
+libcairo-gobject2
+libwayland-cursor0
+curl
+libssl1.1
+libcurl4
+opera-stable
+libpci3
+pciutils
+ubuntu-drivers-common
+wget
+vivaldi-stable
+libss2
+passwd
+distro-info-data
+python3-gi-cairo
+gir1.2-gtk-3.0
+python3-gi
+libpolkit-gobject-1-0
+libpolkit-agent-1-0
+libpolkit-backend-1-0
+policykit-1
+gir1.2-polkit-1.0
+libpackagekit-glib2-18
+gir1.2-packagekitglib-1.0
+gtk-update-icon-cache
+libcurl3-gnutls
+libgnomekbd-common
+libgnomekbd8
+file
+libmagic1
+libmagic-mgc
+iproute2
+libisc-export169
+libdns-export1100
+isc-dhcp-client
+isc-dhcp-common
+python3-netifaces
+netplan.io
+nplan
+openssl
+tzdata
+ubuntu-minimal
+libirs160
+bind9-host
+dnsutils
+libbind9-160
+libisccfg160
+libisccc160
+libdns1100
+libisc169
+liblwres160
+busybox-static
+gettext-base
+libnuma1
+irqbalance
+krb5-locales
+libparted-fs-resize0
+parted
+libparted2
+libplymouth4
+libssl1.0.0
+plymouth-label
+plymouth-theme-ubuntu-text
+plymouth
+psmisc
+ufw
+ureadahead
+adobe-flashplugin
+grub-pc
+grub2-common
+grub-pc-bin
+grub-common
+python3-httplib2
+python3-problem-report
+python3-apport
+apport
+audacity
+audacity-data
+libavutil55
+libswresample2
+libwavpack1
+libavcodec-extra57
+libavformat57
+libportaudio2
+avahi-autoipd
+libavahi-core7
+avahi-daemon
+avahi-utils
+binutils-x86-64-linux-gnu
+binutils-common
+binutils
+libbinutils
+libasan4
+libubsan0
+libcilkrts5
+g++-7
+gcc-7
+libstdc++-7-dev
+libgcc-7-dev
+libgfortran4
+cpp-7
+gcc-7-base
+cpp
+libgl1-mesa-glx
+openjdk-11-jre
+java-common
+openjdk-11-jre-headless
+default-jre
+default-jre-headless
+desktop-file-utils
+e2fslibs
+evolution-data-server
+libebook-1.2-19
+libedata-book-1.2-25
+libebook-contacts-1.2-2
+libedata-cal-1.2-28
+libecal-1.2-19
+libebackend-1.2-10
+evolution-data-server-common
+libedataserverui-1.2-2
+libedataserver-1.2-23
+libjavascriptcoregtk-4.0-18
+libgstreamer1.0-0
+libgstreamer-plugins-base1.0-0
+libxslt1.1
+libcamel-1.2-61
+libgeocode-glib0
+libgweather-common
+libgweather-3-15
+libavresample3
+libpostproc54
+libswscale4
+libzmq5
+libavfilter6
+libcaca0
+pulseaudio-module-bluetooth
+libpulsedsp
+pulseaudio-utils
+pulseaudio
+libpulse-mainloop-glib0
+libpulse0
+libxcb-shape0
+libavdevice57
+ffmpeg
+firefox-locale-en
+libarchive13
+libostree-1-1
+xdg-desktop-portal
+flatpak
+fonts-liberation2
+fonts-opensymbol
+fwupdate-signed
+fwupdate
+libfwup1
+libfwupd2
+fwupd
+gcc
+g++
+gettext
+libcogl-pango20
+gir1.2-coglpango-1.0
+gir1.2-cogl-1.0
+gir1.2-dbusmenu-glib-0.4
+libdbusmenu-glib4
+libflatpak0
+gir1.2-flatpak-1.0
+gir1.2-gkbd-3.0
+libgnome-bluetooth13
+gir1.2-gnomebluetooth-1.0
+gnome-desktop3-data
+libgnome-desktop-3-17
+gir1.2-gnomedesktop-3.0
+gir1.2-gstreamer-1.0
+gir1.2-gst-plugins-base-1.0
+gir1.2-webkit2-4.0
+gir1.2-javascriptcoregtk-4.0
+libnm-gtk0
+gir1.2-nmgtk-1.0
+libupower-glib3
+gir1.2-upowerglib-1.0
+gkbd-capplet
+gnome-bluetooth
+nautilus-data
+gnome-settings-daemon-schemas
+gnome-settings-daemon
+gstreamer1.0-alsa
+gstreamer1.0-gl
+packagekit-tools
+gstreamer1.0-packagekit
+packagekit
+gstreamer1.0-plugins-base
+gstreamer1.0-tools
+gstreamer1.0-plugins-base-apps
+gstreamer1.0-x
+gvfs-bin
+gvfs-backends
+gvfs-fuse
+gvfs
+gvfs-daemons
+gvfs-libs
+gvfs-common
+hwdata
+im-config
+libcogl-common
+libcogl-path20
+libdbusmenu-gtk3-4
+libdbusmenu-gtk4
+libegl1-mesa
+libservlet-api-java
+libservlet3.1-java
+libjsp-api-java
+libwebsocket-api-java
+libel-api-java
+libexiv2-14
+libgd3
+libgles2-mesa
+libgtk-3-bin
+libhsqldb1.8.0-java
+liblua5.3-0
+libmbim-proxy
+libmbim-glib4
+libmm-glib0
+libnautilus-extension1a
+libneon27-gnutls
+network-manager-gnome
+libnma0
+libnvidia-common-390
+nvidia-driver-390
+libnvidia-gl-390
+libnvidia-gl-390:i386
+nvidia-dkms-390
+nvidia-kernel-source-390
+nvidia-kernel-common-390
+libnvidia-decode-390:i386
+libnvidia-decode-390
+libnvidia-compute-390
+libnvidia-compute-390:i386
+nvidia-compute-utils-390
+libnvidia-encode-390
+libnvidia-encode-390:i386
+nvidia-utils-390
+libnvidia-ifr1-390
+libnvidia-ifr1-390:i386
+libnvidia-fbc1-390
+libnvidia-fbc1-390:i386
+xserver-xorg-video-nvidia-390
+libnvidia-cfg1-390
+libqmi-proxy
+libqmi-glib5
+libqt5core5a
+libqt5dbus5
+qt5-gtk-platformtheme
+libqt5network5
+libxcb-randr0
+libxcb-xinerama0
+libxcb-xkb1
+libqt5gui5
+libqt5widgets5
+libqt5printsupport5
+libqt5xml5
+libraw16
+ure
+uno-libs3
+libreoffice-calc
+libreoffice-impress
+libreoffice-draw
+libreoffice-gnome
+libreoffice-gtk3
+libreoffice-writer
+python3-uno
+libreoffice-sdbc-hsqldb
+libreoffice-base-core
+libreoffice-math
+libreoffice-pdfimport
+libreoffice-style-tango
+libreoffice-style-galaxy
+libreoffice-java-common
+libreoffice-common
+libreoffice-ogltrans
+libreoffice-avmedia-backend-gstreamer
+libreoffice-base
+libreoffice-core
+libreoffice-base-drivers
+libreoffice-l10n-de
+libreoffice-help-de
+libreoffice-l10n-en-gb
+libreoffice-help-en-gb
+libreoffice-help-en-us
+libreoffice-l10n-es
+libreoffice-help-es
+libreoffice-l10n-fr
+libreoffice-help-fr
+libreoffice-l10n-it
+libreoffice-help-it
+libreoffice-l10n-pt
+libreoffice-help-pt
+libreoffice-l10n-pt-br
+libreoffice-help-pt-br
+libreoffice-l10n-ru
+libreoffice-help-ru
+libreoffice-l10n-zh-cn
+libreoffice-help-zh-cn
+libreoffice-l10n-zh-tw
+libreoffice-help-zh-tw
+libreoffice-l10n-en-za
+libruby2.5
+libsnapd-glib1
+libvulkan1
+libxatracker2
+libxcb-xv0
+linux-firmware
+linux-libc-dev
+mdadm
+mint-artwork
+mint-mirrors
+mint-upgrade-info
+mintsystem
+mintupdate
+modemmanager
+python-gi-cairo
+python-gi
+mozo
+nfs-common
+openvpn
+python3-urllib3
+rfkill
+ruby2.5
+ssh-askpass-gnome
+thermald
+thunderbird-locale-en
+thunderbird
+thunderbird-gnome-support
+thunderbird-locale-en-us
+upower
+usbmuxd
+wpasupplicant
+xdg-desktop-portal-gtk
+libavcodec-extra
+
+****************************************
+List of users on the system with UID over 1000
+and the associated password expiration information
+
+User: number9
+Last password change					: Dec 03, 2018
+Password expires					: never
+Password inactive					: never
+Account expires						: never
+Minimum number of days between password change		: 0
+Maximum number of days between password change		: 99999
+Number of days of warning before password expires	: 7
+
+****************************************
+
+
